@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.jchan.jtrader.model">
+  <class name="Trade" table="Trade">
+    <id column="TradeId" name="id">
+      <generator class="native"/>
+    </id>
+    <property name="volume"/>
+    <property name="date"/>
+    <property name="stock"/>
+   <property name="mode">
+      <type name="org.hibernate.type.EnumType">
+         <param name="enumClass">com.jchan.jtrader.model.Mode</param>
+      </type>
+   </property>
+   <property name="price"/>
+    <property name="netPrice"/>
+    <property name="grossPrice"/>
+  </class>
+  
+  <class name="Stock" table="Stock">
+    <id column="code" name="code"/>
+    <property name="name"/>
+    <property name="marketValue"/>
+  </class>
+  
+</hibernate-mapping>

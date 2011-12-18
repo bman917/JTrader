@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Stock Info</title>
+
+	<script language="javascript">
+	
+		var urlParams = {};
+		(function () {
+			var e,
+				a = /\+/g,  // Regex for replacing addition symbol with a space
+				r = /([^&=]+)=?([^&]*)/g,
+				d = function (s) { return decodeURIComponent(s.replace(a, " ")); },
+				q = window.location.search.substring(1);
+		
+			while (e = r.exec(q))
+			   urlParams[d(e[1])] = d(e[2]);
+		})();
+	
+	
+	</script>
+	
+	<script language="javascript" type="text/javascript">
+		document.write("<frameset>");
+		document.write("<frame src='http://www2.pse.com.ph/html/MarketInformation/stockinfo.jsp?securitySymbol=" + urlParams["securitySymbol"] + "' />"); 
+		document.write("</frameset>");
+	</script>
+
+</head>
+
+<body>
+	
+</body>
+</html>
